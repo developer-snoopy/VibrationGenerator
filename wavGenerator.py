@@ -59,6 +59,8 @@ for i in range(0, len(signal_set)):
     plt.title('Carrier Frequency: {}Hz, Envelope Frequency: {}Hz, Duration: {}s'.format(signal_set[i][2], signal_set[i][3], signal_set[i][4]))
     plt.xlabel('time(sec)')
     plt.ylabel('G')
+    plt.savefig('Carrier' + str(c) + 'Hz_' + 'Envelope' + str(e) + 'Hz_' + 'Duration' + str(d) + 'ms.png', dpi = 200)
+    plt.clf()
 
 plt.rc('font', size = 23)
 plt.tight_layout()
