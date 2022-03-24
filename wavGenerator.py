@@ -23,7 +23,7 @@ def vibrationGenerator(sampling_rate, carrier_freq, envelope_freq, duration):
 
 sampling_rate = 10000;
 carrier_freq = [100, 150, 200];
-envelope_freq = [8, 16];
+envelope_freq = [0, 8];
 amplitude = np.iinfo(np.int16).max;
 duration = [0.05, 0.3, 2];
 
@@ -47,6 +47,14 @@ plt.figure(figsize = (20,30))
 
 for i in range (0, len(signal_set)):
     plt.subplot(len(signal_set), 1, i + 1)
+    plt.plot(signal_set[i][1], signal_set[i][0])
+    plt.title('Carrier Frequency: {}Hz, Envelope Frequency: {}Hz, Duration: {}s'.format(signal_set[i][2], signal_set[i][3], signal_set[i][4]))
+    plt.xlim([0, 2])
+    plt.ylim([-1, 1])
+    plt.xlabel('time(sec)')
+    plt.ylabel('G')
+
+for i in range(0, len(signal_set)):
     plt.plot(signal_set[i][1], signal_set[i][0])
     plt.title('Carrier Frequency: {}Hz, Envelope Frequency: {}Hz, Duration: {}s'.format(signal_set[i][2], signal_set[i][3], signal_set[i][4]))
     plt.xlabel('time(sec)')
