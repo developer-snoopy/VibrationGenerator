@@ -3,8 +3,6 @@ from scipy.io.wavfile import write
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
 def vibrationGenerator(sampling_rate, carrier_freq, envelope_freq, duration):
     import numpy as np
 
